@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:14
+    container_name: hql_postgres
+    environment:
+      POSTGRES_DB: hql_db
+      POSTGRES_USER: hql_user
+      POSTGRES_PASSWORD: hql_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
