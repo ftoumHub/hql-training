@@ -8,6 +8,9 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Requête SQL native
+ */
 public class Ex26_NativeSQLTest {
 
     @Test
@@ -19,6 +22,8 @@ public class Ex26_NativeSQLTest {
         List<String> result = session.createSQLQuery("SELECT first_name FROM student").list();
 
         assertTrue(!result.isEmpty());
+
+        result.forEach(System.out::println);
 
         session.getTransaction().commit();
         session.close();

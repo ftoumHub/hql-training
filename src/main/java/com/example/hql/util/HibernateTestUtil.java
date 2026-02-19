@@ -11,4 +11,8 @@ public class HibernateTestUtil {
     public static Session getSession() {
         return sessionFactory.openSession();
     }
+
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 }
